@@ -1,0 +1,5 @@
+go install ./
+
+curl -H "Content-Type: application/json" -X POST -d '{"Username":<user name>,"Password":<password>}' http://localhost:<port>/login -w "\nStatus Code: %{http_code}\n"
+
+curl -i -w "\nStatus Code: %{http_code}\n" -H "Authorization: Bearer <token from previous call>" -H "Accept: application/json" -H "Content-Type: application/json" -X GET http://localhost:<port>/test/hello
